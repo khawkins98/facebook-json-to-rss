@@ -3,7 +3,7 @@ facebook-json-to-rss
 
 Converts the JSON from Facebook's Graph API to RSS.
 
-RSS may be aging and JSON the future, but it's really obnoxious when you need an RSS feed.
+RSS may be aging and JSON the future, but the Graph API's lack of RSS support is really obnoxious when you just need a good old RSS feed.
 
 This is a PHP script, you'll probably need PHP 5.2 or newer on your server. You'll also need to download Facebook SDK and a Facebook developer account, as you need an access token.
 
