@@ -32,7 +32,7 @@
                 <docs>https://github.com/khawkins98/facebook-json-to-rss</docs>
                 <generator>facebook-json-to-rss</generator>
                 ";
-    header("Content-Type: application/rss+xml");
+    header("Content-Type: application/rss+xml; charset=UTF-8");
     foreach ($return->data as $line){
         //Catch facebook posts with no links and set it to the page url
         if (!isset($line->link)) {
@@ -54,13 +54,13 @@
             }
             $output .= "  <item>".PHP_EOL.
                 "    <title><![CDATA[".htmlspecialchars($linetitle,ENT_HTML401,'utf-8')."]]></title>".PHP_EOL.
-                "    <link>".utf8_encode(htmlentities(utf8_encode(strip_tags($line->link)),ENT_HTML401,'utf-8'))."</link>".PHP_EOL.
+                "    <link><![CDATA[".utf8_encode(htmlentities(utf8_encode(strip_tags($line->link)),ENT_HTML401,'utf-8'))."]]></link>".PHP_EOL.
                 "    <description><![CDATA[".htmlspecialchars(strip_tags($line->message),ENT_HTML401,'utf-8')."]]></description>".PHP_EOL.
                 "    ".$enclosure.PHP_EOL.
                 // Ommitted as this should be an e-mail
                 //"    <author><![CDATA[".htmlentities(utf8_encode($line->from->name))."]]></author>".PHP_EOL.
                 "    <pubDate>".date("D, d M Y H:i:s O",strtotime($line->created_time))."</pubDate>".PHP_EOL.
-                "    <guid>".utf8_encode(htmlentities(utf8_encode(strip_tags($line->link)),ENT_HTML401,'utf-8'))."</guid>".PHP_EOL.
+                "    <guid><![CDATA[".utf8_encode(htmlentities(utf8_encode(strip_tags($line->link)),ENT_HTML401,'utf-8'))."]]></guid>".PHP_EOL.
                 "  </item>".PHP_EOL;
         }
 
