@@ -54,11 +54,11 @@
         }
 
         $output .= "<item><title><![CDATA[".htmlspecialchars(strip_tags($linetitle),ENT_COMPAT,'utf-8')." ]]></title>
-            <link>".utf8_encode(htmlentities(strip_tags($line->link),ENT_COMPAT,'utf-8'))."</link>
+            <link>".utf8_encode(htmlentities(utf8_encode(strip_tags($line->link)),ENT_COMPAT,'utf-8'))."</link>
             <description><![CDATA[".htmlspecialchars(strip_tags($line->message),ENT_COMPAT,'utf-8')." ]]></description>
-            <author>".htmlentities($line->from->name)."</author>
+            <author>".htmlentities(utf8_encode($line->from->name))."</author>
             <pubDate>".date("D, d M Y H:i:s T",strtotime($line->created_time))."</pubDate>
-            <guid>".utf8_encode(htmlentities(strip_tags($line->link),ENT_COMPAT,'utf-8'))."</guid>
+            <guid>".utf8_encode(htmlentities(utf8_encode(strip_tags($line->link)),ENT_COMPAT,'utf-8'))."</guid>
             </item>
             ";
     }
