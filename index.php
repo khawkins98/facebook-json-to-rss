@@ -28,7 +28,7 @@
     $statuses_url = 'https://graph.facebook.com/' . $screen_name . '/posts?access_token=' . $access_token;
     $fetch_json   = file_get_contents($statuses_url);
     $return       = json_decode($fetch_json);
-    $now          = date("D, d M Y H:i:s T");
+    $now          = date("D, d M Y H:i:s O");
 
     $output = "<?xml version=\"1.0\" encoding=\"utf-8\"?>
         <rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\">
