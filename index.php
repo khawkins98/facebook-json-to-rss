@@ -57,7 +57,7 @@
             <link>".utf8_encode(htmlentities(utf8_encode(strip_tags($line->link)),ENT_COMPAT,'utf-8'))."</link>
             <description><![CDATA[".htmlspecialchars(strip_tags($line->message),ENT_COMPAT,'utf-8')." ]]></description>
             <author>".htmlentities(utf8_encode($line->from->name))."</author>
-            <pubDate>".date("D, d M Y H:i:s T",strtotime($line->created_time))."</pubDate>
+            <pubDate>".date("D, d M Y H:i:s O",strtotime($line->created_time))."</pubDate>
             <guid>".utf8_encode(htmlentities(utf8_encode(strip_tags($line->link)),ENT_COMPAT,'utf-8'))."</guid>
             </item>
             ";
