@@ -12,3 +12,7 @@ Download the SDK at https://github.com/facebook/facebook-php-sdk and setup your 
 Use this script by invoking the its url plus the Facebook Page name in the URL ala /index.php?page=PageNameHere
 
 This script doesn't add Facebook images to the feed, though it wouldn't be hard to make that happen.
+
+## LICENSE
+
+Please see the [license file](LICENSE) for more information.
