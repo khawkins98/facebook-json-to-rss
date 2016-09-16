@@ -36,7 +36,7 @@
     foreach ($return->data as $line){
         //Catch facebook posts with no links and set it to the page url
         if (!isset($line->link)) {
-            $line->link = "http://www.facebook.com/".$screen_name."#".$line->id;
+            $line->link = "https://www.facebook.com/".$line->id;
         }
         // Only render if there's a message
         if (isset($line->message)) {
